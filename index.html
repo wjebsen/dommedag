@@ -17,9 +17,9 @@
         }
         .container {
             display: flex;
-            flex-direction: row;
             justify-content: center;
             align-items: center;
+            height: 100%;
         }
         .photo {
             width: 200px; /* Adjust the width as needed */
@@ -30,9 +30,6 @@
             margin-bottom: 20px;
             font-size: 26px;
             font-weight: bold;
-            
-        }
-      
         }
     </style>
 </head>
@@ -46,112 +43,5 @@
             font-family: 'Marion', sans-serif;
         }
     </style>
-
-
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #f0f0f0;
-        }
-
-
-        .container {
-            position: absolute;
-            width: 100%;
-            min-height: 100%;
-            overflow-y: auto;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-        }
-
-        .photo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            margin: 0;
-        }
-    </style>
-
-    <style>
-        .container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .photo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            margin: 0;
-        }
-
-        .heading {
-            position: fixed;
-            z-index: 1;
-            color: black;
-    
-            letter-spacing: 2px;
-        }
-    </style>
-
-    <script>
-        // Remove all photos except the first one
-        const photos = document.querySelectorAll('.photo');
-        for (let i = 1; i < photos.length; i++) {
-            photos[i].remove();
-        }
-    </script>
-    <script>
-        const container = document.querySelector('.container');
-        const originalPhoto = document.querySelector('.photo');
-        
-        // Create a 3x3 grid of photos
-        for (let i = 0; i < 8; i++) {
-            const photoClone = originalPhoto.cloneNode(true);
-            container.appendChild(photoClone);
-        }
-
-        // Update styles for grid layout
-        container.style.display = 'grid';
-        container.style.gridTemplateColumns = 'repeat(5, 1fr)';
-    // Add rows of images up to 47 rows
-    const interval = setInterval(() => {
-        if (container.children.length < 169) {
-            for (let i = 0; i < 5; i++) {
-                const photoClone = originalPhoto.cloneNode(true);
-                container.appendChild(photoClone);
-            }
-        } else {
-            clearInterval(interval);
-        }
-    }, 1000);
-
-
-    </script>
-
-    <style>
-        .container {
-            position: absolute;
-            width: 100%;
-            min-height: 100%;
-            overflow-y: auto;
-        }
-    </style>
-
-
 </body>
 </html>
-
-
-
-
